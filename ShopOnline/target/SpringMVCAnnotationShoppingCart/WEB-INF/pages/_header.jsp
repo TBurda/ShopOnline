@@ -33,7 +33,7 @@
 
                         </c:if>
                         <c:if test="${pageContext.request.userPrincipal.name == null}">
-                            <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
+                            <li><a href="${pageContext.request.contextPath}/login" id="login">Login</a></li>
                         </c:if>
                     </ul>
                 </div>

@@ -74,7 +74,7 @@
                     </dl>
                 </div>
                 <div class="box-footer">
-                    <a href="${pageContext.request.contextPath}/buyProduct?code=${prodInfo.code}" class="btn btn-block btn-success btn-sm">Buy now</a>
+                    <a href="${pageContext.request.contextPath}/buyProduct?code=${prodInfo.code}" class="btn btn-block btn-success btn-sm" id="buy">Buy now</a>
                     <security:authorize  access="hasRole('ROLE_MANAGER')">
                         <a href="${pageContext.request.contextPath}/product?code=${prodInfo.code}" class="btn btn-block btn-danger btn-sm">Edit</a>
 
