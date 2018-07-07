@@ -38,7 +38,7 @@
         <div class="container">
             <section class="content-header">
                 <h1>
-                    Confirmation
+                    <strong>Confirmation</strong>
                 </h1>
                 <jsp:include page="_menu.jsp" />
             </section>

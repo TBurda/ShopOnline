@@ -34,7 +34,7 @@
         <div class="container">
             <section class="content-header">
                 <h1>
-                    My Cart
+                    <strong>My Cart</strong>
                 </h1>
             </section>
 

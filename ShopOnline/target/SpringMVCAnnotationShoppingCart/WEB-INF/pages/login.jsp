@@ -30,7 +30,7 @@
         <div class="container">
             <section class="content-header">
                 <h1>
-                    Login
+                    <strong>Login</strong>
                 </h1>
             </section>
 

@@ -2,26 +2,12 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 
     <security:authorize  access="hasAnyRole('ROLE_MANAGER','ROLE_EMPLOYEE')">
-        <li>
-            <a href="${pageContext.request.contextPath}/orderList">
-                <i class="fa fa-list"></i>
-                <span>Order List</span>
-            </a>
-        </li>
+        <a class="btn  btn-info btn-sm" href="${pageContext.request.contextPath}/orderList">Order List</a>
     </security:authorize>
 
     <security:authorize  access="hasRole('ROLE_MANAGER')">
-        <li>
-            <a href="${pageContext.request.contextPath}/product">
-                <i class="fa fa-archive"></i>
-                <span>Create Product</span>
-            </a>
-        </li>
-        <li>
-            <a href="${pageContext.request.contextPath}/settings">
-                <i class="fa fa-gears"></i>
-                <span>Settings</span>
-            </a>
-        </li>
+        <a class="btn  btn-info btn-sm" href="${pageContext.request.contextPath}/product">Create Product</a>
+        <a class="btn  btn-info btn-sm" href="${pageContext.request.contextPath}/settings">Settings</a>
+
     </security:authorize>
 

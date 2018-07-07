@@ -35,20 +35,14 @@
 <div class="wrapper" style="height: auto; min-height: 100%;">
 
     <jsp:include page="_header.jsp" />
-    <div class="main-sidebar">
-        <section class="sidebar" style="height: auto;">
-            <ul class="sidebar-menu tree" data-widget="tree">
-                <li class="header">E-shop Settings</li>
-                <jsp:include page="_menu.jsp" />
-            </ul>
-        </section>
-    </div>
     <div class="content-wrapper" style="min-height: 230px;">
         <div class="container">
             <section class="content-header">
                 <h1>
-                    Settings
+                    <strong>Settings<strong>
                 </h1>
+                <br>
+                <jsp:include page="_menu.jsp" />
             </section>
 
             <section class="content col-md-6">

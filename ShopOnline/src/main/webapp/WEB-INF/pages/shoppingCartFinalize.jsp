@@ -32,7 +32,7 @@
         <div class="container">
             <section class="content-header">
                 <h1>
-                    Finalize
+                    <strong>Finalize</strong>
                 </h1>
             </section>
 

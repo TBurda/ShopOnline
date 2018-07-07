@@ -38,7 +38,7 @@
         <div class="container">
             <section class="content-header">
                 <h1>
-                    Product List
+                    <strong>Product List</strong>
                 </h1>
             </section>
 

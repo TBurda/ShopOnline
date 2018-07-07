@@ -27,20 +27,14 @@
 <div class="wrapper" style="height: auto; min-height: 100%;">
 
     <jsp:include page="_header.jsp" />
-<div class="main-sidebar">
-    <section class="sidebar" style="height: auto;">
-        <ul class="sidebar-menu tree" data-widget="tree">
-            <li class="header">E-shop Settings</li>
-            <jsp:include page="_menu.jsp" />
-        </ul>
-    </section>
-</div>
     <div class="content-wrapper" style="min-height: 230px;">
         <div class="container">
             <section class="content-header">
                 <h1>
-                    Product
+                    <strong>Product</strong>
                 </h1>
+                <br>
+                <jsp:include page="_menu.jsp" />
             </section>
 
             <section class="content col-md-6">
@@ -63,7 +57,7 @@
                                     ${productForm.code}
                                 </c:if>
                                 <c:if test="${empty productForm.code}">
-                                    <form:input class="form-control" path="code" />
+                                    <form:input class="form-control" required="required" path="code" />
                                     <form:hidden path="newProduct" />
                                 </c:if>
                             </td>
@@ -72,13 +66,13 @@
 
                         <tr>
                             <td><label class="col-sm-3 control-label">Name</label></td>
-                            <td><form:input path="name" class="form-control"/></td>
+                            <td><form:input path="name" required="required" class="form-control"/></td>
                             <td><form:errors path="name" class="error-message" /></td>
                         </tr>
 
                         <tr>
                             <td><label class="col-sm-3 control-label">Price</label></td>
-                            <td><form:input path="price" class="form-control"/></td>
+                            <td><form:input path="price" required="required" class="form-control"/></td>
                             <td><form:errors path="price" class="error-message" /></td>
                         </tr>
                         <tr>

@@ -34,7 +34,7 @@
         <div class="container">
             <section class="content-header">
                 <h1>
-                    Order Info
+                    <strong>Order Info</strong>
                 </h1>
                 <jsp:include page="_menu.jsp" />
             </section>

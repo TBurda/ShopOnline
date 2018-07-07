@@ -36,7 +36,7 @@
         <div class="container">
             <section class="content-header">
                 <h1>
-                    Customer Information
+                    <strong>Customer Information</strong>
                 </h1>
             </section>
 

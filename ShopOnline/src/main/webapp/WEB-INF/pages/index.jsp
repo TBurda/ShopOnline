@@ -36,7 +36,7 @@
 
             <section class="content">
                 <div class="row">
-                    <h2 class="h2 col-lg-4 page-header">Top Selling</h2>
+                    <h2 class="h2 col-lg-4 page-header"><strong>Top Selling</strong></h2>
                 </div>
                 <div class="box box-solid">
                     <c:forEach items="${paginationProducts.list}" var="prodInfo">
@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <h2 class="h2  col-lg-4 page-header">Top Favourite</h2>
+                    <h2 class="h2  col-lg-4 page-header"><strong>Top Favourite</strong></h2>
                 </div>
                 <div class="box box-solid">
                     <c:forEach items="${paginationProducts.list}" var="prodInfo">
