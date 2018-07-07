@@ -1,17 +1,16 @@
 package cz.uhk.ppro.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cz.uhk.ppro.dao.ICategoryDAO;
 import cz.uhk.ppro.dao.IOrderDao;
 import cz.uhk.ppro.dao.IProductDAO;
 import cz.uhk.ppro.entity.Product;
-import cz.uhk.ppro.model.CartInfo;
-import cz.uhk.ppro.model.CustomerInfo;
-import cz.uhk.ppro.model.PaginationResult;
-import cz.uhk.ppro.model.ProductInfo;
+import cz.uhk.ppro.model.*;
 import cz.uhk.ppro.validator.CustomerInfoValidator;
 import cz.uhk.ppro.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +41,13 @@ public class MainController {
     private IProductDAO productDAO;
 
     @Autowired
+    private ICategoryDAO categoryDAO;
+
+    @Autowired
     private CustomerInfoValidator customerInfoValidator;
+
+    private final int maxResult = 4;
+    private final int maxNavigationPage = 10;
 
     @InitBinder
     public void myInitBinder(WebDataBinder dataBinder) {
@@ -66,20 +71,42 @@ public class MainController {
     }
 
     @RequestMapping("/")
-    public String home() {
+    public String home(Model model,
+                       @RequestParam(value = "name", defaultValue = "") String likeName,
+                       @RequestParam(value = "page", defaultValue = "1") int page) {
+
+        PaginationResult<ProductInfo> result = productDAO.queryProducts(page,
+                    maxResult, maxNavigationPage, likeName);
+
+        List<Category> categories = categoryDAO.getCategories();
+
+        model.addAttribute("productCategories", categories);
+        model.addAttribute("paginationProducts", result);
         return "index";
     }
 
-    @RequestMapping({ "/productList" })
+
+    @RequestMapping(value = { "/productList" }, method = RequestMethod.GET)
     public String listProductHandler(Model model,
                                      @RequestParam(value = "name", defaultValue = "") String likeName,
-                                     @RequestParam(value = "page", defaultValue = "1") int page) {
-        final int maxResult = 4;
-        final int maxNavigationPage = 10;
+                                     @RequestParam(value = "page", defaultValue = "1") int page,
+                                     @RequestParam(value = "category", defaultValue = "-1") int category) {
 
-        PaginationResult<ProductInfo> result = productDAO.queryProducts(page,
-                maxResult, maxNavigationPage, likeName);
 
+        PaginationResult<ProductInfo> result;
+        if (category == -1){
+            result = productDAO.queryProducts(page,
+                    maxResult, maxNavigationPage, likeName);
+        }else {
+            result = productDAO.queryProducts(page,
+                    maxResult, maxNavigationPage, likeName, category);
+        }
+
+
+        List<Category> categories = categoryDAO.getCategories();
+
+        model.addAttribute("productCategories", categories);
+        model.addAttribute("selectedCategory", category);
         model.addAttribute("paginationProducts", result);
         return "productList";
     }

@@ -27,14 +27,20 @@
 <div class="wrapper" style="height: auto; min-height: 100%;">
 
     <jsp:include page="_header.jsp" />
-
+<div class="main-sidebar">
+    <section class="sidebar" style="height: auto;">
+        <ul class="sidebar-menu tree" data-widget="tree">
+            <li class="header">E-shop Settings</li>
+            <jsp:include page="_menu.jsp" />
+        </ul>
+    </section>
+</div>
     <div class="content-wrapper" style="min-height: 230px;">
         <div class="container">
             <section class="content-header">
                 <h1>
                     Product
                 </h1>
-                <jsp:include page="_menu.jsp" />
             </section>
 
             <section class="content col-md-6">
@@ -85,6 +91,16 @@
                             <td><label class="col-sm-3 control-label">Upload image</label></td>
                             <td><form:input type="file" path="fileData"/></td>
                             <td> </td>
+                        </tr>
+                        <tr>
+                            <td><label class="col-sm-3 control-label">Category</label></td>
+                            <td>
+                                <form:select path="category" class="form-control" disabled="">
+                                    <c:forEach items="${productCategories}" var="productCategories">
+                                        <option value="${productCategories.id}">${productCategories.name}</option>
+                                    </c:forEach>
+                                </form:select>
+                            </td>
                         </tr>
                         <tr>
                             <td><label class="col-sm-3 control-label">Description</label></td>

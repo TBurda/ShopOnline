@@ -2,13 +2,11 @@ package cz.uhk.ppro.controller;
 
 import java.util.List;
 
+import cz.uhk.ppro.dao.ICategoryDAO;
 import cz.uhk.ppro.dao.IOrderDao;
-import cz.uhk.ppro.model.OrderDetailInfo;
+import cz.uhk.ppro.model.*;
 import cz.uhk.ppro.validator.ProductInfoValidator;
 import cz.uhk.ppro.dao.IProductDAO;
-import cz.uhk.ppro.model.OrderInfo;
-import cz.uhk.ppro.model.PaginationResult;
-import cz.uhk.ppro.model.ProductInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -39,6 +37,9 @@ public class AdminController {
 
     @Autowired
     private IProductDAO productDAO;
+
+    @Autowired
+    private ICategoryDAO categoryDAO;
 
     @Autowired
     private ProductInfoValidator productInfoValidator;
@@ -107,8 +108,41 @@ public class AdminController {
             productInfo = new ProductInfo();
             productInfo.setNewProduct(true);
         }
+        List<Category> categories = categoryDAO.getCategories();
+        model.addAttribute("productCategories", categories);
         model.addAttribute("productForm", productInfo);
         return "product";
+    }
+
+    @RequestMapping(value = { "/settings" }, method = RequestMethod.GET)
+    public String settings(Model model, @RequestParam(value = "code", defaultValue = "") String code) {
+
+        List<Category> categories = categoryDAO.getCategories();
+
+        model.addAttribute("categoryForm", new Category());
+        model.addAttribute("productCategories", categories);
+        return "settings";
+    }
+
+    @RequestMapping(value = { "/settings" }, method = RequestMethod.POST)
+    @Transactional(propagation = Propagation.NEVER)
+    public String categorySave(Model model,
+                              @ModelAttribute("categoryForm") @Validated Category category,
+                              BindingResult result,
+                              final RedirectAttributes redirectAttributes) {
+
+        if (result.hasErrors()) {
+            return "settings";
+        }
+        try {
+            categoryDAO.save(category.getName());
+        } catch (Exception e) {
+            String message = e.getMessage();
+            model.addAttribute("message", message);
+            return "redirect:/settings";
+
+        }
+        return "redirect:/settings";
     }
 
     @RequestMapping(value = { "/product" }, method = RequestMethod.POST)

@@ -17,6 +17,8 @@ public interface IProductDAO {
 
     public PaginationResult<ProductInfo> queryProducts(int page, int maxResult, int maxNavigationPage, String likeName);
 
+    public PaginationResult<ProductInfo> queryProducts(int page, int maxResult, int maxNavigationPage, String likeName, int category);
+
     public void save(ProductInfo productInfo);
 
 }

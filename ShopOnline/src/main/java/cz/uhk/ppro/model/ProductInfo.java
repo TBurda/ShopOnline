@@ -8,6 +8,7 @@ public class ProductInfo {
     private String name;
     private double price;
     private String description;
+    private int category;
 
     private boolean newProduct=false;
 
@@ -21,13 +22,23 @@ public class ProductInfo {
         this.name = product.getName();
         this.price = product.getPrice();
         this.description = product.getDescription();
+        this.category = product.getCategory();
     }
 
-    public ProductInfo(String code, String name, double price, String description) {
+    public ProductInfo(String code, String name, double price, String description, int category) {
         this.code = code;
         this.name = name;
         this.price = price;
         this.description = description;
+        this.category = category;
+    }
+
+    public int getCategory() {
+        return category;
+    }
+
+    public void setCategory(int category) {
+        this.category = category;
     }
 
     public String getCode() {

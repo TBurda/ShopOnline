@@ -45,8 +45,7 @@
             <section class="content">
 
    <div class="row">
-
-<c:forEach items="${paginationProducts.list}" var="prodInfo">
+    <c:forEach items="${paginationProducts.list}" var="prodInfo">
 
     <div class="col-md-3">
 
@@ -85,7 +84,7 @@
             </div>
         </div>
 </c:forEach>
-        </div>
+   </div>
 
 
 <c:if test="${paginationProducts.totalPages > 1}">
@@ -93,7 +92,7 @@
     <div class="page-navigator">
         <c:forEach items="${paginationProducts.navigationPages}" var = "page">
             <c:if test="${page != -1 }">
-                <a href="productList?page=${page}" class="nav-item">${page}</a>
+                <a href="productList?page=${page}&category=${selectedCategory}" class="nav-item">${page}</a>
             </c:if>
             <c:if test="${page == -1 }">
                 <span class="nav-item"> ... </span>
