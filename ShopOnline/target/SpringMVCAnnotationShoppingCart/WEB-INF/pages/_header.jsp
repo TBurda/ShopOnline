@@ -17,7 +17,17 @@
 
                 <div class="collapse navbar-collapse pull-left">
                     <ul class="nav navbar-nav">
-                        <li><a href="${pageContext.request.contextPath}/productList">Product List</a></li>
+                        <li><a href="${pageContext.request.contextPath}/productList">All Products</a></li>
+                        <c:if test="${productCategories != null}">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Product Categories<span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <c:forEach items="${productCategories}" var="category">
+                                            <li><a href="${pageContext.request.contextPath}/productList?category=${category.id}">${category.name}</a></li>
+                                        </c:forEach>
+                                    </ul>
+                            </li>
+                        </c:if>
                     </ul>
                 </div>
 

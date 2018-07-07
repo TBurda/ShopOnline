@@ -34,7 +34,7 @@ public class ProductDAOImpl implements IProductDAO {
         if (product == null) {
             return null;
         }
-        return new ProductInfo(product.getCode(), product.getName(), product.getPrice(), product.getDescription());
+        return new ProductInfo(product.getCode(), product.getName(), product.getPrice(), product.getDescription(), product.getCategory());
     }
 
 
@@ -56,6 +56,7 @@ public class ProductDAOImpl implements IProductDAO {
         product.setName(productInfo.getName());
         product.setPrice(productInfo.getPrice());
         product.setDescription(productInfo.getDescription());
+        product.setCategory(productInfo.getCategory());
 
 
         if (productInfo.getFileData() != null) {
@@ -75,8 +76,26 @@ public class ProductDAOImpl implements IProductDAO {
     public PaginationResult<ProductInfo> queryProducts(int page, int maxResult, int maxNavigationPage,
                                                        String likeName) {
         String sql = "Select new " + ProductInfo.class.getName()
-                + "(p.code, p.name, p.price, p.description) " + " from "
+                + "(p.code, p.name, p.price, p.description, p.category) " + " from "
                 + Product.class.getName() + " p ";
+        if (likeName != null && likeName.length() > 0) {
+            sql += " Where lower(p.name) like :likeName ";
+        }
+        sql += " order by p.createDate desc ";
+
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery(sql);
+        if (likeName != null && likeName.length() > 0) {
+            query.setParameter("likeName", "%" + likeName.toLowerCase() + "%");
+        }
+        return new PaginationResult<ProductInfo>(query, page, maxResult, maxNavigationPage);
+    }
+
+    public PaginationResult<ProductInfo> queryProducts(int page, int maxResult, int maxNavigationPage,
+                                                       String likeName, int category) {
+        String sql = "Select new " + ProductInfo.class.getName()
+                + "(p.code, p.name, p.price, p.description, p.category) " + " from "
+                + Product.class.getName() + " p where p.category = "+category;
         if (likeName != null && likeName.length() > 0) {
             sql += " Where lower(p.name) like :likeName ";
         }

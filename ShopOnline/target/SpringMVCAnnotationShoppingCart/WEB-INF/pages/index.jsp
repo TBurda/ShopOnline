@@ -1,3 +1,7 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +35,160 @@
             </section>
 
             <section class="content">
+                <div class="row">
+                    <h2 class="h2 col-lg-4 page-header">Top Selling</h2>
+                </div>
+                <div class="box box-solid">
+                    <c:forEach items="${paginationProducts.list}" var="prodInfo">
 
+                        <div class="col-md-3">
+
+                            <div class="box box-solid">
+                                <div class="container-fluid no-padding">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <img src="${pageContext.request.contextPath}/productImage?code=${prodInfo.code}" alt="placeholder 960" class="img-responsive"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="box-header with-border">
+                                    <h3 class="box-title"><strong>${prodInfo.name}</strong></h3>
+                                </div>
+                                <div class="box-body">
+                                        ${prodInfo.description}
+                                </div>
+                                <div class="box-body">
+                                    <dl class="dl-horizontal">
+                                        <dt>Code:</dt>
+                                        <dd>${prodInfo.code}</dd>
+                                        <dt>Price:</dt>
+                                        <dd>${prodInfo.price}</dd>
+                                    </dl>
+                                </div>
+                                <div class="box-footer">
+                                    <a href="${pageContext.request.contextPath}/buyProduct?code=${prodInfo.code}" class="btn btn-block btn-success btn-sm" id="buy">Buy now</a>
+                                    <security:authorize  access="hasRole('ROLE_MANAGER')">
+                                        <a href="${pageContext.request.contextPath}/product?code=${prodInfo.code}" class="btn btn-block btn-danger btn-sm">Edit</a>
+
+                                    </security:authorize>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="tab-pane active" id="tab_1-1">
+                            <b>How to use:</b>
+
+                            <p>Exactly like the original bootstrap tabs except you should use
+                                the custom wrapper <code>.nav-tabs-custom</code> to achieve this style.</p>
+                            A wonderful serenity has taken possession of my entire soul,
+                            like these sweet mornings of spring which I enjoy with my whole heart.
+                            I am alone, and feel the charm of existence in this spot,
+                            which was created for the bliss of souls like mine. I am so happy,
+                            my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
+                            that I neglect my talents. I should be incapable of drawing a single stroke
+                            at the present moment; and yet I feel that I never was a greater artist than now.
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="tab-pane active" id="tab_1-1">
+                            <b>How to use:</b>
+
+                            <p>Exactly like the original bootstrap tabs except you should use
+                                the custom wrapper <code>.nav-tabs-custom</code> to achieve this style.</p>
+                            A wonderful serenity has taken possession of my entire soul,
+                            like these sweet mornings of spring which I enjoy with my whole heart.
+                            I am alone, and feel the charm of existence in this spot,
+                            which was created for the bliss of souls like mine. I am so happy,
+                            my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
+                            that I neglect my talents. I should be incapable of drawing a single stroke
+                            at the present moment; and yet I feel that I never was a greater artist than now.
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <h2 class="h2 col-lg-4 page-header">Top Favourite</h2>
+                </div>
+                <div class="box box-solid">
+                    <c:forEach items="${paginationProducts.list}" var="prodInfo">
+
+                        <div class="col-md-3">
+
+                            <div class="box box-solid">
+                                <div class="container-fluid no-padding">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <img src="${pageContext.request.contextPath}/productImage?code=${prodInfo.code}" alt="placeholder 960" class="img-responsive"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="box-header with-border">
+                                    <h3 class="box-title"><strong>${prodInfo.name}</strong></h3>
+                                </div>
+                                <div class="box-body">
+                                        ${prodInfo.description}
+                                </div>
+                                <div class="box-body">
+                                    <dl class="dl-horizontal">
+                                        <dt>Code:</dt>
+                                        <dd>${prodInfo.code}</dd>
+                                        <dt>Price:</dt>
+                                        <dd>${prodInfo.price}</dd>
+                                    </dl>
+                                </div>
+                                <div class="box-footer">
+                                    <a href="${pageContext.request.contextPath}/buyProduct?code=${prodInfo.code}" class="btn btn-block btn-success btn-sm" id="buy">Buy now</a>
+                                    <security:authorize  access="hasRole('ROLE_MANAGER')">
+                                        <a href="${pageContext.request.contextPath}/product?code=${prodInfo.code}" class="btn btn-block btn-danger btn-sm">Edit</a>
+
+                                    </security:authorize>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </c:forEach>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="tab-pane active" id="tab_1-1">
+                            <b>Top Favourite</b>
+
+                            <p>Exactly like the original bootstrap tabs except you should use
+                                the custom wrapper <code>.nav-tabs-custom</code> to achieve this style.</p>
+                            A wonderful serenity has taken possession of my entire soul,
+                            like these sweet mornings of spring which I enjoy with my whole heart.
+                            I am alone, and feel the charm of existence in this spot,
+                            which was created for the bliss of souls like mine. I am so happy,
+                            my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
+                            that I neglect my talents. I should be incapable of drawing a single stroke
+                            at the present moment; and yet I feel that I never was a greater artist than now.
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="tab-pane active" id="tab_1-1">
+                            <b>How to use:</b>
+
+                            <p>Exactly like the original bootstrap tabs except you should use
+                                the custom wrapper <code>.nav-tabs-custom</code> to achieve this style.</p>
+                            A wonderful serenity has taken possession of my entire soul,
+                            like these sweet mornings of spring which I enjoy with my whole heart.
+                            I am alone, and feel the charm of existence in this spot,
+                            which was created for the bliss of souls like mine. I am so happy,
+                            my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
+                            that I neglect my talents. I should be incapable of drawing a single stroke
+                            at the present moment; and yet I feel that I never was a greater artist than now.
+                        </div>
+
+                    </div>
+                </div>
             </section>
         </div>
     </div>

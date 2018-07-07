@@ -5,9 +5,11 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 import com.mysql.jdbc.ConnectionProperties;
+import cz.uhk.ppro.dao.ICategoryDAO;
 import cz.uhk.ppro.dao.IOrderDao;
 import cz.uhk.ppro.dao.IProductDAO;
 import cz.uhk.ppro.dao.impl.AccountDAOImpl;
+import cz.uhk.ppro.dao.impl.CategoryDAOImpl;
 import cz.uhk.ppro.dao.impl.OrderDAOImpl;
 import cz.uhk.ppro.dao.impl.ProductDAOImpl;
 import org.hibernate.SessionFactory;
@@ -118,6 +120,11 @@ public class ApplicationContextConfig {
     @Bean(name = "accountDAO")
     public IAccountDAO getAccountDAO()  {
         return new AccountDAOImpl();
+    }
+
+    @Bean(name = "categoryDAO")
+    public ICategoryDAO getCategoryDAO()  {
+        return new CategoryDAOImpl();
     }
 
 }

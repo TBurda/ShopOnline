@@ -3,13 +3,7 @@ package cz.uhk.ppro.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Lob;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Products")
@@ -22,6 +16,7 @@ public class Product implements Serializable {
     private double price;
     private byte[] image;
     private String description;
+    private int category;
 
     private Date createDate;
 
@@ -85,4 +80,13 @@ public class Product implements Serializable {
         this.description = description;
     }
 
+    @JoinColumn
+    @Column(name = "CATEGORY_ID", nullable = false)
+    public int getCategory() {
+        return category;
+    }
+
+    public void setCategory(int category) {
+        this.category = category;
+    }
 }
