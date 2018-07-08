@@ -63,8 +63,9 @@ CREATE TABLE IF NOT EXISTS `Categories` (
 --
 
 INSERT INTO `Categories` (`ID`, `Name`) VALUES
-(1, 'Silniční kola'),
-(2, 'Horská kola');
+(1, 'Road Bikes'),
+(2, 'Mountain Bikes'),
+(2, 'Kids Bikes');
 
 -- --------------------------------------------------------
 
@@ -92,8 +93,8 @@ CREATE TABLE IF NOT EXISTS `Orders` (
 -- Struktura tabulky `order_details`
 --
 
-DROP TABLE IF EXISTS `Order_details`;
-CREATE TABLE IF NOT EXISTS `Order_details` (
+DROP TABLE IF EXISTS `Order_Details`;
+CREATE TABLE IF NOT EXISTS `Order_Details` (
   `ID` varchar(50) NOT NULL,
   `Amount` double NOT NULL,
   `Price` double NOT NULL,

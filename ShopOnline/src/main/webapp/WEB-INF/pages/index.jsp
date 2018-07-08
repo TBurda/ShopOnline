@@ -80,37 +80,25 @@
                     </c:forEach>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="tab-pane active" id="tab_1-1">
-                            <b>How to use:</b>
-
-                            <p>Exactly like the original bootstrap tabs except you should use
-                                the custom wrapper <code>.nav-tabs-custom</code> to achieve this style.</p>
-                            A wonderful serenity has taken possession of my entire soul,
-                            like these sweet mornings of spring which I enjoy with my whole heart.
-                            I am alone, and feel the charm of existence in this spot,
-                            which was created for the bliss of souls like mine. I am so happy,
-                            my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
-                            that I neglect my talents. I should be incapable of drawing a single stroke
-                            at the present moment; and yet I feel that I never was a greater artist than now.
+                            <b>Top Selling</b>
+                            <p>Nam vel nulla quis nulla luctus accumsan et a lacus. Ut quis facilisis enim, vel luctus tortor. Vestibulum non nunc nisl. Morbi scelerisque imperdiet diam, id sodales urna ornare sit amet. Praesent rutrum justo neque,
+                                quis aliquam massa ornare venenatis. Phasellus gravida quis velit a consequat. Nulla eleifend et arcu a porttitor.
+                                Curabitur nec tortor eu felis egestas iaculis. Proin ac tempus erat. Donec rutrum elit mi, nec fermentum dui sollicitudin eget.
+                                Aliquam auctor neque vestibulum tincidunt sodales. Duis et orci at arcu tincidunt suscipit. Vivamus ac elit suscipit,
+                                dapibus sem at, porta nunc. Pellentesque vulputate placerat malesuada. Orci varius natoque penatibus et magnis dis parturient montes,
+                                nascetur ridiculus mus. Donec sem tellus, semper vel ornare eget, condimentum at libero.</p>
+                            <p>Suspendisse gravida iaculis congue. Proin quis enim mattis, ornare nulla nec, dictum tellus.
+                                Nulla eu fermentum metus. Sed turpis orci, ornare et mollis fermentum, euismod non felis.
+                                Vivamus tortor tortor, malesuada eget blandit nec, cursus eu felis. Maecenas congue urna quis libero placerat,
+                                non dictum dui dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                                Cras eros risus, consequat et elementum in, laoreet eget enim. Aenean consequat ut metus sit amet interdum.
+                                Sed posuere eleifend rutrum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed condimentum sem.
+                                Etiam vel nisi dapibus, convallis mauris eget, ornare orci.</p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="tab-pane active" id="tab_1-1">
-                            <b>How to use:</b>
 
-                            <p>Exactly like the original bootstrap tabs except you should use
-                                the custom wrapper <code>.nav-tabs-custom</code> to achieve this style.</p>
-                            A wonderful serenity has taken possession of my entire soul,
-                            like these sweet mornings of spring which I enjoy with my whole heart.
-                            I am alone, and feel the charm of existence in this spot,
-                            which was created for the bliss of souls like mine. I am so happy,
-                            my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
-                            that I neglect my talents. I should be incapable of drawing a single stroke
-                            at the present moment; and yet I feel that I never was a greater artist than now.
-                        </div>
-
-                    </div>
                 </div>
                 <div class="row">
                     <h2 class="h2  col-lg-4 page-header"><strong>Top Favourite</strong></h2>
@@ -157,36 +145,13 @@
                     </c:forEach>
                 </div>
                 <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         <div class="tab-pane active" id="tab_1-1">
                             <b>Top Favourite</b>
 
-                            <p>Exactly like the original bootstrap tabs except you should use
-                                the custom wrapper <code>.nav-tabs-custom</code> to achieve this style.</p>
-                            A wonderful serenity has taken possession of my entire soul,
-                            like these sweet mornings of spring which I enjoy with my whole heart.
-                            I am alone, and feel the charm of existence in this spot,
-                            which was created for the bliss of souls like mine. I am so happy,
-                            my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
-                            that I neglect my talents. I should be incapable of drawing a single stroke
-                            at the present moment; and yet I feel that I never was a greater artist than now.
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet metus quis risus porta bibendum. Aliquam tempus mauris lobortis consequat porta. Mauris sed justo ac tellus semper lacinia. Ut scelerisque neque ex, ac accumsan felis varius ac. Mauris eu nisl erat. Quisque ut malesuada urna. Vestibulum scelerisque auctor lobortis. Sed congue vestibulum dolor. Donec nec nisi augue. Praesent sollicitudin magna sit amet sapien viverra vestibulum. Donec sodales eros vitae tellus gravida, ac fermentum lacus luctus. Aenean iaculis et erat at maximus. Donec vel maximus urna, non porttitor erat.</p>
+                            <p>Pellentesque aliquam quis eros sed fringilla. Mauris convallis sapien nec dolor pharetra hendrerit. Phasellus ante lacus, pulvinar et est et, interdum imperdiet massa. Phasellus eget ligula sed velit vulputate iaculis ut ut orci. Ut mollis, magna ut luctus facilisis, est neque iaculis lacus, fringilla lacinia est dui sed magna. Nullam ac magna non velit porttitor scelerisque ut in ipsum. Nullam tincidunt mattis enim, eu dictum dui consectetur non.</p>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="tab-pane active" id="tab_1-1">
-                            <b>How to use:</b>
-
-                            <p>Exactly like the original bootstrap tabs except you should use
-                                the custom wrapper <code>.nav-tabs-custom</code> to achieve this style.</p>
-                            A wonderful serenity has taken possession of my entire soul,
-                            like these sweet mornings of spring which I enjoy with my whole heart.
-                            I am alone, and feel the charm of existence in this spot,
-                            which was created for the bliss of souls like mine. I am so happy,
-                            my dear friend, so absorbed in the exquisite sense of mere tranquil existence,
-                            that I neglect my talents. I should be incapable of drawing a single stroke
-                            at the present moment; and yet I feel that I never was a greater artist than now.
-                        </div>
-
                     </div>
                 </div>
             </section>

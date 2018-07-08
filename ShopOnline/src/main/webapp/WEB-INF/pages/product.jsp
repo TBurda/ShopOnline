@@ -46,7 +46,6 @@
             </c:if>
 
             <div class="box">
-
                 <form:form modelAttribute="productForm" method="POST" enctype="multipart/form-data">
                     <table style="text-align:left;">
                         <tr>
