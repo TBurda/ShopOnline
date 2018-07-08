@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `Categories` (
 INSERT INTO `Categories` (`ID`, `Name`) VALUES
 (1, 'Road Bikes'),
 (2, 'Mountain Bikes'),
-(2, 'Kids Bikes');
+(3, 'Kids Bikes');
 
 -- --------------------------------------------------------
 
