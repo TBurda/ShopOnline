@@ -100,7 +100,7 @@
                         </dl>
                     </div>
                     <div class="box-footer">
-                        <a href="${pageContext.request.contextPath}/shoppingCartRemoveProduct?code=${cartLineInfo.productInfo.code}" class="btn btn-block btn-danger btn-sm">Delete</a>
+                        <a href="${pageContext.request.contextPath}/shoppingCartRemoveProduct?code=${cartLineInfo.productInfo.code}" class="btn btn-block btn-danger btn-sm" id="delete">Delete</a>
                     </div>
                 </div>
             </div>
@@ -109,8 +109,8 @@
 
         <div class="col-xs-12 text-center">
             <input class="btn  btn-success btn-sm" type="submit" value="Update Quantity" />
-            <a class="btn  btn-success btn-sm navi-item" href="${pageContext.request.contextPath}/shoppingCartCustomer">Enter Customer Info</a>
-            <a class="btn  btn-success btn-sm navi-item" href="${pageContext.request.contextPath}/productList">Continue Buy</a>
+            <a class="btn  btn-success btn-sm navi-item" href="${pageContext.request.contextPath}/shoppingCartCustomer" id="enter_customer_info">Enter Customer Info</a>
+            <a class="btn  btn-success btn-sm navi-item" href="${pageContext.request.contextPath}/productList" id="continue_buy">Continue Buy</a>
         </div>
   </form:form>
 

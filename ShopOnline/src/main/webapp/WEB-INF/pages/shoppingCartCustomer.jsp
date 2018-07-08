@@ -76,7 +76,7 @@
                             <tr>
                                 <td>&nbsp;</td>
                                 <td>
-                                    <input type="submit" value="Submit" class="btn btn-info"/>
+                                    <input type="submit" value="Submit" id="save" class="btn btn-info"/>
                                     <input type="reset" value="Reset" class="btn btn-default"/>
                                 </td>
                             </tr>

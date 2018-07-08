@@ -63,7 +63,7 @@
                                 <td style="color:red;">
                                     <fmt:formatNumber value="${orderInfo.amount}" type="currency"/>
                                 </td>
-                                <td><a href="${pageContext.request.contextPath}/order?orderId=${orderInfo.id}">
+                                <td><a href="${pageContext.request.contextPath}/order?orderId=${orderInfo.id}" id="view">
                                     View</a></td>
                             </tr>
                         </c:forEach>
